@@ -1,10 +1,11 @@
 
+
 public class Solution 
 {
     public IList<string> StringMatching(string[] words) 
     {
-        //Create new list
-    List<string> substringList = new List<string>();
+        //Create new hashset
+    HashSet<string> substring = new HashSet<string>();
         
         //Iterate through substring i
     for(int i = 0; i != words.Length; i++)
@@ -15,16 +16,14 @@ public class Solution
             //The words in i dont match the words in J AND the words in J contain the words from I
             if(words[i] != words[j] && words[j].Contains(words[i]))
             { 
-                //The substring does not contain the words from substring i
-                if(!substringList.Contains(words[i]))
-                {
-                    //Add to the new list
-                    substringList.Add(words[i]);
-                }                        
+                //Add to the new list
+                substring.Add(words[i]);                      
             }                
         }
         
     }
-    return substringList;
+        //turn into list
+    List<string> answer = substring.ToList();
+    return answer;
     }
 }
