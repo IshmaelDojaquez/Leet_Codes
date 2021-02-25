@@ -3,12 +3,14 @@ public class Solution
     public int Reverse(int x) 
     {
        {
+           //Positive numbers
             if (x >= 0)
             {
                 int reverse = ProblemSolver(x);
                 return reverse;
             }
             else
+                //Negative numbers get turned positive... used in method... turned negative again
             {
                 x *= -1;
                 int reverse = ProblemSolver(x);
